@@ -1,0 +1,11 @@
+{
+  "name": "kraken",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ShizukuIchi/gitkraken.git",
+  "author": "sh1zuku <shizukuichi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "x-ray": "^2.3.2"
+  }
+}
