@@ -1,10 +1,21 @@
-const Xray = require('x-ray')
-const x = Xray()
+const Express = require('express');
+const helmet = require('helmet')
+const serveStatic = require('serve-static')
+const app = Express();
 
-x('https://kiki.ccu.edu.tw/~ccmisp06/Course/5304.html', 'table > tr', [
-  {
-    No: 'td:nth-child(2)',
-    courseName: 'td:nth-child(4)',
-    teacher: 'td:nth-child(5)',
-  },
-]).write('./dist/course.json');
+app.use(helmet())
+app.use(serveStatic('public'))
+
+app.use((req, res, next) => {
+  console.log('middleware')
+  next()
+});
+
+app.get('/', function (req, res) {
+  console.log('Hello')
+  res.send(`hello`)
+})
+
+app.listen(process.env || 3000, function () {
+  console.log('start listen http://localhost:3000')
+})

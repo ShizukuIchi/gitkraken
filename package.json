@@ -5,7 +5,17 @@
   "repository": "https://github.com/ShizukuIchi/gitkraken.git",
   "author": "sh1zuku <shizukuichi@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "node-dev index.js",
+    "start": "node index.js"
+  },
   "dependencies": {
+    "express": "^4.16.3",
+    "helmet": "^3.12.0",
+    "serve-static": "^1.13.2",
     "x-ray": "^2.3.2"
+  },
+  "devDependencies": {
+    "node-dev": "^3.1.3"
   }
 }
