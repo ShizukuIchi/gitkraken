@@ -16,6 +16,6 @@ app.get('/', function (req, res) {
   res.send(`hello`)
 })
 
-app.listen(process.env || 3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log('start listen http://localhost:3000')
 })
