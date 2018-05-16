@@ -1,6 +1,11 @@
-const Express = require('express');
+const Express = require('express')
 const helmet = require('helmet')
 const serveStatic = require('serve-static')
+
+if (process.env.NODE_ENV !== 'production'){
+  require('dotenv').config()
+}
+
 const app = Express();
 
 app.use(helmet())
@@ -16,6 +21,10 @@ app.get('/', function (req, res) {
   res.send(`hello`)
 })
 
-app.listen(process.env.PORT || 3000, function () {
+app.get('/user/:id', function (req, res) {
+  res.send(`hello user ${req.params.id}`)
+})
+
+app.listen(process.env.PORT, function () {
   console.log('start listen http://localhost:3000')
 })
